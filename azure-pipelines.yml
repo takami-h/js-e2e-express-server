@@ -17,7 +17,7 @@ steps:
 
 - script: |
     npm install
-    npm test:ci
+    npm run test:ci
     npm run build
   displayName: 'npm install, test and build'
 
@@ -25,9 +25,9 @@ steps:
   condition: succeededOrFailed()
   inputs:
     testRunner: JUnit
-    testResultsFiles: 'TEST-*.test.xml'
+    testResultsFiles: '**/TEST-*.test.xml'
 
 - task: PublishCodeCoverageResults@1
   inputs:
     codeCoverageTool: 'cobertura'
-    summaryFileLocation: 'coverage/clover.xml'
+    summaryFileLocation: '**/coverage/clover.xml'
