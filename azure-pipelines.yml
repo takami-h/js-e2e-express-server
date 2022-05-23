@@ -7,9 +7,9 @@ trigger:
 - main
 
 stages:
-- stage: 'build-app'
+- stage: 'build'
   jobs:
-  - job: 'build-app'
+  - job: 'build'
     pool:
       vmImage: ubuntu-latest
     steps:
