@@ -22,6 +22,8 @@ stages:
         npm run test:ci
         npm run build
       displayName: 'npm install, test and build'
+    - publish: './'
+      artifact: app
     - task: PublishTestResults@2
       condition: succeededOrFailed()
       inputs:
