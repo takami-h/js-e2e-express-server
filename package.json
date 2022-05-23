@@ -51,11 +51,13 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
+  "jest": {
+    "coverageReporters": [
+      "text",
+      "cobertura"
+    ]
+  },
   "jest-junit": {
     "outputName": "TEST-app.test.xml"
-  },
-  "coverageReporters": [
-    "text",
-    "cobertura"
-  ]
+  }
 }

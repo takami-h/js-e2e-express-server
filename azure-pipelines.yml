@@ -30,4 +30,4 @@ steps:
 - task: PublishCodeCoverageResults@1
   inputs:
     codeCoverageTool: 'cobertura'
-    summaryFileLocation: '**/coverage/clover.xml'
+    summaryFileLocation: '**/coverage/cobertura-coverage.xml'
