@@ -20,3 +20,14 @@ steps:
     npm test
     npm run build
   displayName: 'npm install, test and build'
+
+- task: PublishTestResults@2
+  condition: succeededOrFailed()
+  inputs:
+    testRunner: JUnit
+    testResultsFiles: '**/TEST-*.test.xml'
+
+- task: PublishCodeCoverageResults@1
+  inputs:
+    codeCoverageTool: 'cobertura'
+    summaryFileLocation: 'coverage/clover.xml'

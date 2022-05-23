@@ -12,6 +12,7 @@
     "start": "node src/index.js",
     "start:dev": "npm run lint && nodemon --exec node src/index.js --unhandled-rejections=warn",
     "test": "jest --detectOpenHandles --coverage",
+    "test:ci": "jest --detectOpenHandles --coverage --ci --reporters=jest-junit",
     "lint": "eslint src/**/*.js --fix"
   },
   "repository": {
@@ -33,6 +34,7 @@
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-prettier": "^3.1.4",
     "jest": "^26.4.2",
+    "jest-junit": "^13.2.0",
     "nodemon": "^2.0.4",
     "prettier": "^2.1.2",
     "supertest": "^6.1.1"
@@ -48,5 +50,12 @@
     "semi": true,
     "singleQuote": true,
     "trailingComma": "es5"
-  }
+  },
+  "jest-junit": {
+    "outputName": "TEST-app.test.xml"
+  },
+  "coverageReporters": [
+    "text",
+    "cobertura"
+  ]
 }
