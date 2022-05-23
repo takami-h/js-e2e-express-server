@@ -31,3 +31,20 @@ stages:
       inputs:
         codeCoverageTool: 'cobertura'
         summaryFileLocation: '**/coverage/cobertura-coverage.xml'
+
+- stage: 'post_process'
+  jobs:
+  - job: 'job1'
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - script: |
+        echo 'post_process - job1'
+      displayName: 'step'
+  - job: 'job2'
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - script: |
+        echo 'post_process - job2'
+      displayName: 'step'
