@@ -46,12 +46,12 @@ stages:
       vmImage: ubuntu-latest
     steps:
     - script: |
-        echo 'post_process - job1'
+        echo 'post_process - job1 $(Date:yyyyMMdd)'
       displayName: 'step'
   - job: 'job2'
     pool:
       vmImage: ubuntu-latest
     steps:
     - script: |
-        echo 'post_process - job2'
+        echo 'post_process - job2 $(Date:hhmm)'
       displayName: 'step'
